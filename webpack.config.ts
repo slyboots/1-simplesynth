@@ -53,7 +53,7 @@ const config: webpack.Configuration = {
         new CleanWebpackPlugin( ['dist'], { verbose: true }),
         new HtmlWebpackPlugin({
             title: 'Slyboots Simple Synth',
-            template: "index.html",
+            template: "./src/index.html",
             favicon: "",
             cache: true,
             mobile: true,
