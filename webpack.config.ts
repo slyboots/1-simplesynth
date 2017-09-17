@@ -26,6 +26,7 @@ const config: webpack.Configuration = {
             template: HtmlWebpackTemplate,
             favicon: "",
             cache: true,
+            mobile: true,
             devServer: "http://localhost:3000"
         } as HtmlWebpackTemplate.Options)
     ],
