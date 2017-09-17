@@ -11,11 +11,55 @@
                 "echo": false,
                 "reveal": "silent",
                 "focus": true,
-                "panel": "new"
+                "panel": "dedicated"
             },
             "problemMatcher": [
                 "$tsc"
             ]
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "label": "Run Webpack",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "type": "npm",
+            "script": "start",
+            "label": "Webpack DevServer",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "focus": true,
+                "panel": "dedicated"
+            }
+        },
+        {
+            "type": "npm",
+            "script": "clean",
+            "label": "Clean Up",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "focus": true,
+                "panel": "dedicated"
+            }
         }
     ]
 }
