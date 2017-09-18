@@ -39,7 +39,8 @@ const config: webpack.Configuration = {
                         }
                     ],
                     fallback: "style-loader"
-                })
+                }),
+                exclude: /node_modules/
             },
             {
                 test: /\.tsx?$/,
@@ -57,7 +58,7 @@ const config: webpack.Configuration = {
             favicon: "",
             cache: true,
             mobile: true,
-            devServer: "http://localhost:3000"
+            inject: "head"
         })
     ],
     devtool: "inline-source-map",
@@ -69,7 +70,10 @@ const config: webpack.Configuration = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'index.js'
+        filename: 'index.js',
+        library: "sbsSS",
+        libraryTarget: "umd",
+        umdNamedDefine: true
     }
 };
 

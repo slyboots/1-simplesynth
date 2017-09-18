@@ -19,12 +19,15 @@
             "dom.iterable",
             "es2015",
             "es2016"
-        ]
+        ],
+        "traceResolution": true,
+        "listFiles": true
     },
-    "include": [
-        "src"
-    ],
+
     "exclude": [
-        "node_modules"
+        "node_modules",
+        ".vscode",
+        "assets",
+        "webpack.config.ts"
     ]
 }
