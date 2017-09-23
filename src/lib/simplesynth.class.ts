@@ -1,13 +1,12 @@
 import { Nodes } from "./nodes.class";
-import { SynthTemplate } from "./template";
-
+import { SynthInternal, Waveform } from "./synth.class";
 export type Wave = "sine" | "square" | "sawtooth"
 
 export class SimpleSynth {
     constructor() {
         try {
             window.AudioContext = AudioContext || webkitAudioContext;
-            this.context = new (AudioContext || webkitAudioContext)();
+            this.internalSynth = new SynthInternal();
         }
         catch (err) {
             alert("The Web Audio API is not supported on this browser!");
@@ -65,6 +64,8 @@ export class SimpleSynth {
     public readonly context: AudioContext;
 
     // PRIVATE PROPERTIES
+    private internalSynth: SynthInternal;
+
     private oscillator: OscillatorNode;
     private volume: GainNode;
     private playing: boolean = false;
