@@ -1,5 +1,4 @@
 import { Nodes } from "./nodes.class";
-import { SynthTemplate } from "./template";
 
 export type Wave = "sine" | "square" | "sawtooth"
 
