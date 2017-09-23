@@ -1,1 +1,40 @@
-<h1>SimpleSynth</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Synth</title>
+<link href="index.460fb06bbb46290d8a0e13a520fbe276.css" rel="stylesheet"><script type="text/javascript" src="index.js"></script></head>
+
+<body>
+    <h1>Simple Synth</h1>
+    <div class="flex w-80 justify-between items-center outline center h-auto" id="simplesynth">
+
+        <div class="flex-auto">
+            <span>pitch</span>
+            <input id="pitch" type="range" min="0" max="2000" step="1" value="1000" onchange="synth.updateFrequency(this)">
+        </div>
+        <div class="flex-auto">
+            <button id="play" onclick="synth.toggle()">Play</button>
+        </div>
+        <div class="flex flex-auto items-center justify-center flex-row">
+            <div class='dib'>
+              <button id="sine" class="f6 fl hover-bg-dark-gray hover-white near-white bg-black b--black bb bt bl ph3 pv2 dib b bl" onclick="synth.updateWaveform('sine')">Si</button>
+              <button id="square" class="f6 fl hover-bg-dark-gray hover-white near-white bg-black b--black ba       ph3 pv2 dib" onclick="synth.updateWaveform('square')">Sq</button>
+              <button id="sawtooth" class="f6 fl hover-bg-dark-gray hover-white near-white bg-black b--black bb bt    ph3 pv2 dib br" onclick="synth.updateWaveform('sawtooth')">Sw</button>
+            </div>
+        </div>
+        <div class="flex-auto">
+            <span>volume</span>
+            <input id="volume" type="range" min="0" max="1" step="0.1" value="0.0" onchange="synth.updateVolume(this)">
+        </div>
+    </div>
+    <script type="text/javascript">
+        var synth = new sbsSS.SimpleSynth();
+        synth.init();
+    </script>
+</body>
+
+</html>
